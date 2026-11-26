@@ -4,11 +4,11 @@ import Header from './Components/Header'
 
 function App() {
   return (
-    <div className='bg-dark h-screen'>
+    <div className='h-screen'>
       <Header/>
-      <div>
+      <main className='pt-32.5 p-5'>
         <Outlet/>
-      </div>
+      </main>
     </div>
   )
 }
