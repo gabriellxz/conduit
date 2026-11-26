@@ -6,9 +6,9 @@ function App() {
   return (
     <div className='bg-dark h-screen'>
       <Header/>
-      <main>
+      <div>
         <Outlet/>
-      </main>
+      </div>
     </div>
   )
 }
