@@ -7,18 +7,18 @@ interface ArticleProps {
     data: Article;
 }
 
-export default function ArticleCardView({ data }: ArticleProps) {
+export default function ArticleCard({ data }: ArticleProps) {
     return (
-        <div className="bg-superficie p-4 rounded-4xl mb-3">
+        <div className="bg-superficie p-4 rounded-[18px] mb-4">
             <div className="flex justify-between items-center">
                 <div className="flex gap-3 items-center">
-                    <FaRegUser size={30} />
+                    <FaRegUser size={28} />
                     <div>
                         <p>{data.author.username}</p>
                         <p className="text-sm text-texto-sec">{formatDate(data.createdAt)}</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-2 border border-destaque rounded-4xl p-2 text-destaque">
+                <div className="flex items-center gap-2 border border-destaque rounded-3xl px-2 text-destaque">
                     <CiHeart />
                     <span>{data.favoritesCount}</span>
                 </div>
@@ -30,6 +30,14 @@ export default function ArticleCardView({ data }: ArticleProps) {
             <p className="mt-2 text-sm text-texto-sec">
                 {data.description}
             </p>
+
+            <div className="flex gap-2 flex-wrap text-texto-sec text-sm mt-3">
+                {
+                    data.tagList.map((tag: string) => (
+                        <span className="border border-texto-sec px-2 rounded-xl">{tag}</span>
+                    ))
+                }
+            </div>
         </div>
     )
 }
