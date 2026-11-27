@@ -1,13 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import './App.css'
-import Header from './Components/Header'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className='h-screen'>
-      <Header/>
+      <Header />
       <main className='pt-32.5 p-5'>
-        <Outlet/>
+        <Outlet />
       </main>
     </div>
   )
