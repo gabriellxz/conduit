@@ -16,7 +16,7 @@
     --perigo: #FF8A7A;
 }
 
-.light {
+[data-theme="light"] {
     color-scheme: light;
     --fundo: #FAF7F2;
     --superficie: #FFFFFF;
