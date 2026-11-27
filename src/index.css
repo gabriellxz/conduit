@@ -2,13 +2,53 @@
 @import "tailwindcss";
 
 
-@theme {
-    --color-brand: #0B6B57;
-    --color-brand-ligth: #4FD1B0;
-    --color-cream: #FAF7F5;
-    --color-dark: #141311;
+:root {
+    color-scheme: dark;
+    --fundo: #141311;
+    --superficie: #1D1C19;
+    --texto: #F1EEE8;
+    --texto-sec: #AAA498;
+    --linha: #34312B;
+    --borda-campo: #837D70;
+    --destaque: #4FD1B0;
+    --destaque-suave: #17302A;
+    --sobre-destaque: #0B1B17;
+    --perigo: #FF8A7A;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --fundo: #FAF7F2;
+    --superficie: #FFFFFF;
+    --texto: #1C1B19;
+    --texto-sec: #5C584F;
+    --linha: #E4DED2;
+    --borda-campo: #8A8478;
+    --destaque: #0B6B57;
+    --destaque-suave: #E3F1EC;
+    --sobre-destaque: #FFFFFF;
+    --perigo: #B42318;
+}
+
+@theme inline {
+    --color-fundo: var(--fundo);
+    --color-superficie: var(--superficie);
+    --color-texto: var(--texto);
+    --color-texto-sec: var(--texto-sec);
+    --color-linha: var(--linha);
+    --color-borda-campo: var(--borda-campo);
+    --color-destaque: var(--destaque);
+    --color-destaque-suave: var(--destaque-suave);
+    --color-sobre-destaque: var(--sobre-destaque);
+    --color-perigo: var(--perigo);
 
     --font-display: "Fraunces", Georgia, serif;
     --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
     --font-serif: Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+    body {
+        @apply bg-fundo text-texto font-sans;
+    }
 }
