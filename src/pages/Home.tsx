@@ -1,10 +1,14 @@
 import ArticleCard from '../components/ArticleCard'
 import BadgeTag from '../components/BadgeTag';
+import Button from '../components/Button';
+import TextError from '../components/TextError';
 import { useGetArticles, useGetTags } from '../hooks/useArticles'
 import type { Article } from '../types/article'
+import { Skeleton } from "@mui/material"
 
 export default function Home() {
-    const { data: dataArticles } = useGetArticles();
+
+    const { data: dataArticles, isLoading: loadingArt, error, refetch } = useGetArticles();
     const { data: dataTags } = useGetTags();
 
     return (
@@ -17,7 +21,7 @@ export default function Home() {
                     <p className="mt-5 text-xl text-texto-sec">
                         Conduit é um espaço para escrever com calma e ler sem ruído. Explore os artigos ou crie uma conta para publicar.
                     </p>
-                    <button className="bg-destaque text-destaque-suave rounded-4xl p-2 font-semibold mt-5">Começar a escrever</button>
+                    <Button text='Começar a escrever' className="bg-destaque text-destaque-suave rounded-4xl p-2 font-semibold mt-5" />
                 </div>
                 <div className="mt-12 md:flex md:gap-12 ">
                     <div className='w-full'>
@@ -29,9 +33,34 @@ export default function Home() {
                         </div>
 
                         <div className="mt-4">
-                            {dataArticles?.articles.map((art: Article, index: number) => (
-                                <ArticleCard data={art} key={index} />
-                            ))}
+                            {loadingArt ? (
+                                //LOADING SKELETON
+                                <>
+                                    <Skeleton
+                                        variant='rectangular'
+                                        height={184}
+                                        style={{ backgroundColor: "var(--superficie)", width: "100%", borderRadius: "18px", marginBottom: "10px" }}
+                                    />
+                                    <Skeleton
+                                        variant='rectangular'
+                                        height={184}
+                                        style={{ backgroundColor: "var(--superficie)", width: "100%", borderRadius: "18px", marginBottom: "10px" }}
+                                    />
+                                    <Skeleton
+                                        variant='rectangular'
+                                        height={184}
+                                        style={{ backgroundColor: "var(--superficie)", width: "100%", borderRadius: "18px", marginBottom: "10px" }}
+                                    />
+                                </>
+                            ) : (
+                                dataArticles?.articles.map((art: Article, index: number) => (
+                                    <ArticleCard data={art} key={index} />
+                                ))
+                            )}
+
+                            {
+                                error && <TextError refetch={refetch}/>
+                            }
                         </div>
                     </div>
 

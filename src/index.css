@@ -51,4 +51,8 @@
     body {
         @apply bg-fundo text-texto font-sans;
     }
+
+    button {
+        @apply cursor-pointer
+    }
 }
