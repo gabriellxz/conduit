@@ -1,5 +1,6 @@
 import { MdOutlineWbSunny } from "react-icons/md"
 import { useTheme } from "../hooks/useTheme"
+import { IoMoonOutline } from "react-icons/io5";
 
 export default function Header() {
 
@@ -16,7 +17,7 @@ export default function Header() {
                 <button className="rounded-4xl p-2">Entrar</button>
                 <button className="bg-destaque text-destaque-suave rounded-4xl p-2">Criar conta</button>
                 <button onClick={toggle}>
-                    <MdOutlineWbSunny />
+                    {isDark ? <MdOutlineWbSunny /> : <IoMoonOutline />}
                 </button>
             </div>
         </header>
