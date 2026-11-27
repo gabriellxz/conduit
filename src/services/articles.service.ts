@@ -12,7 +12,7 @@ export interface TagsResponse {
 
 export const articlesService = {
     listArticles: async (): Promise<ArticlesResponse> => {
-        const { data } = await http.get<ArticlesResponse>('/')
+        const { data } = await http.get<ArticlesResponse>('/articles')
         return data;
     },
 
