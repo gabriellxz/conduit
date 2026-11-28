@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import InputText from "../components/InputText";
 
 export default function Login() {
     return (
@@ -14,11 +15,11 @@ export default function Login() {
                 <div className="mt-5">
                     <div className="flex flex-col mb-5">
                         <label className="mb-1">E-mail</label>
-                        <input type="email" className="bg-superficie border-[0.5px] border-borda-campo p-3 rounded-2xl" />
+                        <InputText type="email" />
                     </div>
                     <div className="flex flex-col mb-5">
                         <label className="mb-1">Senha</label>
-                        <input type="email" className="bg-superficie border-[0.5px] border-borda-campo p-3 rounded-2xl" />
+                        <InputText type="email" />
                     </div>
                     <Button text="Entrar" className="bg-destaque text-destaque-suave rounded-4xl p-2 w-full font-semibold" />
                 </div>
