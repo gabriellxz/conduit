@@ -4,9 +4,9 @@ import { Footer } from './components/Footer'
 
 function App() {
   return (
-    <div className='h-screen'>
+    <div className='min-h-screen flex flex-col'>
       <Header />
-      <main className='pt-32.5 p-5'>
+      <main className='flex-1 pt-32.5 p-5'>
         <Outlet />
       </main>
       <Footer/>
