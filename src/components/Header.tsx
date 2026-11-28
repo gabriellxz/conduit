@@ -29,7 +29,11 @@ export default function Header() {
                     }
                     text="Entrar"
                 />
-                <Button className="bg-destaque text-destaque-suave rounded-4xl p-2" text="Criar conta" />
+                <Button
+                    fn={() => navigate("/register")}
+                    className="bg-destaque text-destaque-suave rounded-4xl p-2"
+                    text="Criar conta"
+                />
                 <button onClick={toggle}>
                     {isDark ? <MdOutlineWbSunny /> : <IoMoonOutline />}
                 </button>

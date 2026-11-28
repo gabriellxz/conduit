@@ -9,7 +9,7 @@ export default function Login() {
                 <div>
                     <h1 className="font-display text-[2.2rem]">Entrar</h1>
                     <p className="text-texto-sec">
-                        Novo por aqui? <Link to={""} className="text-destaque underline">Crie uma conta.</Link>
+                        Novo por aqui? <Link to={"/register"} className="text-destaque underline">Crie uma conta.</Link>
                     </p>
                 </div>
                 <div className="mt-5">
@@ -19,7 +19,7 @@ export default function Login() {
                     </div>
                     <div className="flex flex-col mb-5">
                         <label className="mb-1">Senha</label>
-                        <InputText type="email" />
+                        <InputText type="password" />
                     </div>
                     <Button text="Entrar" className="bg-destaque text-destaque-suave rounded-4xl p-2 w-full font-semibold" />
                 </div>
